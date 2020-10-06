@@ -25,7 +25,7 @@ const MenuItem = ({ section }) => {
                                 ingredients={plates.ingredients}
                             />
                             <span>
-                                <p style={{ margin: '0' }}>{plates.price}€</p>
+                                <p style={{ margin: '10px 0 0 0' }}>{plates.price}€</p>
                             </span>
                         </div>
                     </div>

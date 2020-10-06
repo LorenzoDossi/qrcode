@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
           return (
             <span key={section.plates[0]._key}>
 
-              <h2 className='margin' id={`${section.course}`}> {section.course} </h2>
+              <h2 className='margin_section' id={`${section.course}`}> {section.course} </h2>
               <MenuItem
                 section={section}
               />

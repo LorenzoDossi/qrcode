@@ -62,7 +62,7 @@ img {
 .link_modal {
     color: $green-dark;
     background-color: transparent;
-    padding: 10px 0;
+    padding: 10px 0 0 0;
     font-weight: $font-bold;
     border: none;
 }
@@ -79,4 +79,8 @@ img {
 
 .margin {
     margin: 0 20px;
+}
+
+.margin_section {
+    margin: 30px 20px 0 20px;
 }

@@ -10,7 +10,7 @@ const MenuList = ({ menu }) => (
                 menu.map(({ node: section }) => {
                     return (
                         <li key={section.plates[0]._key}>
-                            <AnchorLink offset='80' href={`#${section.course}`}> {section.course} </AnchorLink>
+                            <AnchorLink offset='90' href={`#${section.course}`}> {section.course} </AnchorLink>
                         </li>
                     )
                 }
