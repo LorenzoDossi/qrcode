@@ -1,11 +1,10 @@
 import React from 'react'
 import ModalMenuItem from '../modals/ModalMenuItem'
 import Gluten from '../bottons/icons/gluten'
-import Lactose from '../bottons/icons/Lactose'
+import Lactose from '../bottons/icons/lactose'
 import Vegan from '../bottons/icons/Vegan'
 
 const ButtonMoreInfo = ({ description, name, imageUrl, imageFluid, allergens, ingredients }) => {
-    console.log(ingredients)
     const [isModalOpen, setIsOpen] = React.useState(false)
 
     const showMenuItemModal = () => {
@@ -33,7 +32,6 @@ const ButtonMoreInfo = ({ description, name, imageUrl, imageFluid, allergens, in
     }
     if ((ingredients?.lactose === true) && (ingredients?.vegan === true)) {
         lactoseOrVegan = <Vegan />
-        console.log("what")
     }
 
     return (
