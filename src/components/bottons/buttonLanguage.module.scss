@@ -1,0 +1,18 @@
+.container{
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span:first-child {
+        display: flex;
+        padding-right: 5px;
+    }
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+}

@@ -1,22 +1,83 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import { graphql } from 'gatsby'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import MenuList from '../components/menu/MenuList'
+import MenuItem from '../components/menu/MenuItem'
+import ogImage from '../images/ogImage.webp'
+
+export const query = graphql`
+  {
+    allSanityMenu {
+      edges {
+        node {
+          course
+          plates {
+            _key
+            name {
+              it
+            }
+            image {
+              asset {
+                fluid {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
+            description {
+              it
+            }
+            price
+            allergens {
+              allergen {
+                it
+              }
+            }
+            ingredients {
+              meat
+              vegetarian
+              fish
+            }
+          }
+        
+        }
+      }
+    }
+}
+`
+
+const IndexPage = ({ data }) => {
+  const menu = data.allSanityMenu.edges
+
+  return (
+    <Layout>
+      <SEO
+        title="Pizzeria il Tagliere, menù"
+        description="Descrizione breve per whatsapp."
+        lang="it"
+        image={ogImage}
+      />
+
+      <MenuList menu={menu} />
+
+      {
+        menu.map(({ node: section }) => {
+
+          return (
+            <span key={section.plates[0]._key}>
+
+              <h2 className='margin' id={`${section.course}`}> {section.course} </h2>
+              <MenuItem
+                section={section}
+              />
+
+            </span>
+          )
+        })
+      }
+    </Layout>
+  )
+}
 
 export default IndexPage

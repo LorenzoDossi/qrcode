@@ -9,10 +9,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import Image from "../components/image"
+import ButtonLanguage from "../components/bottons/ButtonLanguage"
+import ButtonSocial from "../components/bottons/ButtonSocial"
+
+import "./styles/globalStyle.scss"
+import layoutStyles from './layout.module.scss'
+import ButtonFilter from './bottons/ButtonFilter'
+
 
 const Layout = ({ children }) => {
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,23 +32,22 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      <div >
+        <Image />
+        <div className={`margin ${layoutStyles.buttons}`}>
+          <ButtonLanguage />
+          <ButtonSocial
+            whatsapp={'https://wa.link/p9xtp6'}
+            telephone={'+393407877684'}
+          />
+        </div>
+        <div className={layoutStyles.title}>
+          <h1 className='margin'>PIZZERIA IL TAGLIERE</h1>
+        </div>
       </div>
+
+      {/* <ButtonFilter /> */}
+      <main>{children}</main>
     </>
   )
 }

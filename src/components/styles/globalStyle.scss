@@ -1,0 +1,81 @@
+@import './modules/layout.scss';
+@import './modules/fonts.scss';
+@import './modules/colors.scss';
+
+$border-radius: 7px;
+
+html {
+    font-size: $fontSize;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+a {
+    color: $black-primary;
+    text-decoration: none;
+}
+
+body {
+    font-family: $font-family;
+    background-color: #F3F3F3;
+}
+
+h1 {
+    font-size: $fontSize3;
+    font-weight: $font-normal;
+}
+
+h2 {
+    font-size: $fontSize1;
+    font-weight: $font-light;
+}
+
+h3 {
+    font-size: $fontSize5;
+    font-weight: $font-normal;
+    margin: 0;
+}
+
+p {
+    font-size: $fontSize;
+    color: $grey-primary;
+    margin: 0;
+}
+
+button {
+    border-radius: $border-radius;
+}
+
+img {
+    margin: 0;
+}
+
+.link_modal {
+    color: $green-dark;
+    background-color: transparent;
+    padding: 10px 0;
+    border: none;
+}
+
+.menuList_item {
+    font-size: $fontSize4;
+}
+
+.language_text {
+    font-size: $fontSize4;
+    font-weight: $font-bold;
+    color: $grey-primary;
+}
+
+.margin {
+    margin: 0 20px;
+}

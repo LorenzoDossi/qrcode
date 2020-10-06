@@ -1,0 +1,19 @@
+.container {
+    background-color: white;
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 4px solid #B6E79F;
+    
+    ul li {
+        padding: 20px;
+    }
+
+    ul li a {
+        font-weight: 500;
+        color: #696969;
+    }
+}
