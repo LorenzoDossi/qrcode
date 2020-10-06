@@ -35,9 +35,9 @@ export const query = graphql`
               }
             }
             ingredients {
-              meat
-              vegetarian
-              fish
+              gluten
+              lactose
+              vegan
             }
           }
         

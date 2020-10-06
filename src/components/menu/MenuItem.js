@@ -22,6 +22,7 @@ const MenuItem = ({ section }) => {
                                 imageUrl={plates.image.asset.fluid.src}
                                 description={plates.description.it}
                                 allergens={plates.allergens}
+                                ingredients={plates.ingredients}
                             />
                             <span>
                                 {plates.price}€
