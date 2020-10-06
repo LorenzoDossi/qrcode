@@ -33,6 +33,7 @@
         width: 100%;
 
         .real_image {
+            margin-top: 20px;
             width: 100%;
             background-color: #f4f4f4;
             height: calc(40vmin);
@@ -54,6 +55,7 @@
 // paddings {
 .details {
     padding: 20px 20px 0 20px;
+    margin: 0;
 }
 
 .name,

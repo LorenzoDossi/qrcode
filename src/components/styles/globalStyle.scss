@@ -41,13 +41,13 @@ h2 {
 
 h3 {
     font-size: $fontSize5;
-    font-weight: $font-normal;
+    font-weight: $font-bold;
     margin: 0;
 }
 
 p {
     font-size: $fontSize;
-    color: $grey-primary;
+    color: $black-primary;
     margin: 0;
 }
 
@@ -63,6 +63,7 @@ img {
     color: $green-dark;
     background-color: transparent;
     padding: 10px 0;
+    font-weight: $font-bold;
     border: none;
 }
 

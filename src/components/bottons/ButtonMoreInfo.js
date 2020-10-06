@@ -15,31 +15,37 @@ const ButtonMoreInfo = ({ description, name, imageUrl, imageFluid, allergens, in
         setIsOpen(false)
     }
 
-    let icon = undefined
+    let gluten = undefined
+    let lactoseOrVegan = undefined
+    let isIconReal = false
 
+    if (ingredients?.gluten === true) {
+        gluten = <Gluten />
+        isIconReal = true
+    }
     if (ingredients?.lactose === true) {
-        icon = <Lactose />
+        lactoseOrVegan = <Lactose />
+        isIconReal = true
     }
     if (ingredients?.vegan === true) {
-        icon = <Vegan />
+        lactoseOrVegan = <Vegan />
+        isIconReal = true
     }
     if ((ingredients?.lactose === true) && (ingredients?.vegan === true)) {
-        icon = <Vegan />
+        lactoseOrVegan = <Vegan />
         console.log("what")
     }
 
     return (
         <>
             <button className='link_modal' onClick={showMenuItemModal}>
-
-                {ingredients?.gluten && <span><Gluten /></span>}
-
-
-                <span>
-                    {icon}
+                <span style={{ display: 'flex', alignItems: 'center' }}>
+                    <span style={{ margin: isIconReal && '0 10px 0 0' }} >
+                        <span>{gluten}</span>
+                        <span>{lactoseOrVegan}</span>
+                    </span>
+                    <span>tocca per maggiori dettagli</span>
                 </span>
-
-                <span>tocca per maggiori dettagli</span>
             </button>
 
             <ModalMenuItem

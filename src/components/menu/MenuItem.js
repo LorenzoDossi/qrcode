@@ -15,18 +15,18 @@ const MenuItem = ({ section }) => {
                             <h3>{plates.name.it}</h3>
                             <p>{plates.description.it}</p>
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <ButtonMoreInfo
                                 name={plates.name.it}
-                                imageFluid={plates.image.asset.fluid}
-                                imageUrl={plates.image.asset.fluid.src}
+                                imageFluid={plates.image?.asset?.fluid}
+                                imageUrl={plates.image?.asset?.fluid?.src}
                                 description={plates.description.it}
                                 allergens={plates.allergens}
                                 ingredients={plates.ingredients}
                             />
                             <span>
-                                {plates.price}€
-                        </span>
+                                <p style={{ margin: '0' }}>{plates.price}€</p>
+                            </span>
                         </div>
                     </div>
                 </div>
