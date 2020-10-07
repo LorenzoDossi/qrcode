@@ -9,7 +9,7 @@ const LanguageModal = ({ isModalOpen, closeLanguageModal }) => (
         isModalOpen={isModalOpen}
         closeModal={closeLanguageModal}
     >
-        <h2>Lingue</h2>
+        <h2 className={modalLanguageStyles.languages}>Lingue</h2>
         <div className={modalLanguageStyles.spacer}>
             <button className={modalLanguageStyles.modal_button}>
                 <Flag flagName={'IT'} />
@@ -17,7 +17,7 @@ const LanguageModal = ({ isModalOpen, closeLanguageModal }) => (
             </button>
             <button className={modalLanguageStyles.modal_button}>
                 <Flag flagName={'DE'} />
-                <span className='language_text'>Deutsch</span>
+                <span className='language_text'>English</span>
             </button>
         </div>
     </Modal>

@@ -22,7 +22,6 @@ const MenuItemModal = ({ isModalOpen, closeMenuItemModal, description, allergens
                     <h3 className={modalMenuItemStyles.name}>{name}</h3>
                     <p className={modalMenuItemStyles.description}>{description}</p>
 
-
                     {allergens.length > 0 &&
 
                         <div className={modalMenuItemStyles.allergens}>
@@ -30,7 +29,7 @@ const MenuItemModal = ({ isModalOpen, closeMenuItemModal, description, allergens
                             <ul>
                                 {
                                     allergens.map(({ allergen }) => (
-                                        <li>
+                                        <li key={allergen.it}>
                                             <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="2.5" cy="2.5" r="2.5" fill="#B6E79F" />
                                             </svg>
@@ -45,7 +44,7 @@ const MenuItemModal = ({ isModalOpen, closeMenuItemModal, description, allergens
                 </div>
             </div>
 
-        </Modal>
+        </Modal >
     )
 }
 
