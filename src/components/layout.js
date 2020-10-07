@@ -39,7 +39,7 @@ const Layout = ({ children, data }) => {
           <Header siteSettings={data.allSanitySiteSettings.edges[0]} />
         )}
       />
-      <div>
+      <div style={{ zIndex: '-1' }}>
         <main>{children}</main>
       </div>
     </>

@@ -15,7 +15,7 @@ const deafultStyles = {
         borderRadius: '7px',
         width: 'calc(100% - 40px)',
         border: 'none',
-        boxShadow: '0 0 10px rgba(0, 0, 0, .25)'
+        boxShadow: '0 0 10px rgba(0, 0, 0, .25)',
     }
 };
 
