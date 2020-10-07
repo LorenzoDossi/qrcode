@@ -1,9 +1,9 @@
 import React from 'react'
 import ButtonLanguage from './bottons/ButtonLanguage'
 
-import Share from './bottons/icons/share'
-import Whatsapp from './bottons/icons/whatsapp'
-import Call from './bottons/icons/call'
+import Share from './bottons/icons/Share'
+import Whatsapp from './bottons/icons/Whatsapp'
+import Call from './bottons/icons/Call'
 
 import Image from 'gatsby-image'
 import headerStyles from './header.module.scss'
