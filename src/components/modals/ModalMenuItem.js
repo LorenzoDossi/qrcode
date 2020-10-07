@@ -1,6 +1,6 @@
 import React from 'react'
 import modalMenuItemStyles from './modalMenuItem.module.scss'
-import Img from "gatsby-image"
+import Image from "gatsby-image"
 import Modal from './modal/Modal'
 
 
@@ -16,7 +16,7 @@ const MenuItemModal = ({ isModalOpen, closeMenuItemModal, description, allergens
 
                     <div className={modalMenuItemStyles.image_container}>
                         <div className={modalMenuItemStyles.image}>
-                            <Img fluid={imageFluid} alt="immagine della pietanza" className={modalMenuItemStyles.real_image} draggable={true} />
+                            <Image fluid={imageFluid} alt="immagine della pietanza" className={modalMenuItemStyles.real_image} draggable={true} />
                         </div>
                     </div>
                     <h3 className={modalMenuItemStyles.name}>{name}</h3>

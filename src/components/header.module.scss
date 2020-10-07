@@ -1,0 +1,52 @@
+.container {
+    position: relative;
+}
+
+.image {
+    max-height: 50vh;
+}
+
+.website_title {
+    margin-top: 40px;
+    h1 {
+        text-transform: uppercase;
+    }
+}
+
+.buttons {
+    position: relative;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+
+    .language {
+        position: absolute;
+        transform: translate(0, -50%);
+        left: 0;
+        top: 0;
+    }
+
+    .social {
+        position: absolute;
+        transform: translate(0, -50%);
+        right: 0;
+        top: 2px;
+    }
+    
+    .link {
+        
+        display: inline-block;
+        margin-left: 10px;
+        padding: 8px;
+        background-color: #fff;
+        border-radius: 7px;
+        
+
+        svg {
+            display: flex;
+            height: 21px;
+            width: 21px;
+        }
+    }
+    
+}

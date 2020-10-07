@@ -7,7 +7,7 @@ import MenuList from '../components/menu/MenuList'
 import MenuItem from '../components/menu/MenuItem'
 import ogImage from '../images/ogImage.webp'
 
-export const query = graphql`
+export const sanityMenu = graphql`
   {
     allSanityMenu {
       edges {
@@ -40,7 +40,6 @@ export const query = graphql`
               vegan
             }
           }
-        
         }
       }
     }

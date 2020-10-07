@@ -6,54 +6,44 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Image from "../components/image"
-import ButtonLanguage from "../components/bottons/ButtonLanguage"
-import ButtonSocial from "../components/bottons/ButtonSocial"
 
 import "./styles/globalStyle.scss"
+import Header from "./header"
+import { StaticQuery, graphql } from "gatsby"
 import layoutStyles from './layout.module.scss'
-import ButtonFilter from './bottons/ButtonFilter'
 
-
-const Layout = ({ children }) => {
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({ children, data }) => {
   return (
     <>
-      <div >
-        <Image />
-        <div className={`margin ${layoutStyles.buttons}`}>
-          <ButtonLanguage />
-          <ButtonSocial
-            whatsapp={'https://wa.link/p9xtp6'}
-            telephone={'+393407877684'}
-          />
-        </div>
-        <div className={layoutStyles.title}>
-          <h1 className='margin'>PIZZERIA IL TAGLIERE</h1>
-        </div>
+      <StaticQuery
+        query={graphql`query siteSettings {
+          allSanitySiteSettings {
+            edges {
+              node {
+                siteName
+                isLanguageButtonShown
+                whatsappNumber
+                telephoneNumber
+                heroImage {
+                  asset {
+                    fluid(maxWidth: 400) {
+                      ...GatsbySanityImageFluid
+                    } 
+                  }
+                }
+              } 
+            }
+          }
+        }`}
+        render={data => (
+          <Header siteSettings={data.allSanitySiteSettings.edges[0]} />
+        )}
+      />
+      <div>
+        <main>{children}</main>
       </div>
-
-      {/* <ButtonFilter /> */}
-      <main>{children}</main>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
