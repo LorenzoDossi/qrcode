@@ -84,4 +84,15 @@ img {
 
 .margin_section {
     margin: 30px 20px 0 20px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 23px;
+        left: -30px;
+        width: 20px;
+        height: 4px;
+        border-radius: 20px;
+        background-color: $green-primary;
+    }
 }
