@@ -13,6 +13,7 @@ import { StaticQuery, graphql } from "gatsby"
 import layoutStyles from './layout.module.scss'
 
 const Layout = ({ children, data }) => {
+  document.addEventListener("touchstart", function () { }, true);
   return (
     <>
       <StaticQuery

@@ -9,6 +9,23 @@ import Image from 'gatsby-image'
 import headerStyles from './header.module.scss'
 
 const Header = ({ siteSettings: { node: settings } }) => {
+
+    const handleOnClick = () => {
+        if (navigator.share) {
+            navigator
+                .share({
+                    text: `${settings.siteName}, Menù`,
+                    url: document.location.href,
+                })
+                .then(() => {
+                    console.log('Successfully shared');
+                })
+                .catch(error => {
+                    console.error('Something went wrong sharing the blog', error);
+                });
+        }
+    }
+
     return (
         <div className={headerStyles.container}>
             <div>
@@ -22,16 +39,16 @@ const Header = ({ siteSettings: { node: settings } }) => {
                 }
                 <div className={headerStyles.social}>
                     {settings.telephoneNumber &&
-                        <div className={headerStyles.link}>
-                            <Call phoneNumber={settings.telephoneNumber} />
-                        </div>
+                        <a href={`tel:${settings.telephoneNumber}`} className={headerStyles.link}>
+                            <Call />
+                        </a>
                     }
                     {settings.whatsappNumber &&
-                        <span className={headerStyles.link}>
-                            <Whatsapp whatsappLink={settings.whatsappNumber} />
-                        </span>
+                        <a href={`https://wa.me/${settings.whatsappNumber}`} className={headerStyles.link}>
+                            <Whatsapp />
+                        </a>
                     }
-                    <span className={headerStyles.link}>
+                    <span className={headerStyles.link} onClick={handleOnClick}>
                         <Share className={headerStyles.link} />
                     </span>
                 </div>

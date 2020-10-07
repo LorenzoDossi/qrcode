@@ -3,10 +3,14 @@
 @import './modules/colors.scss';
 
 $border-radius: 7px;
+*{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 html {
     font-size: $fontSize;
 }
+
 
 ul {
     list-style: none;
@@ -86,7 +90,7 @@ img {
     margin: 30px 20px 0 20px;
     position: relative;
     z-index: -1;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -97,4 +101,13 @@ img {
         border-radius: 20px;
         background-color: $green-primary;
     }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline-color: $green-primary;
+    outline-style: solid;
+    outline-width: 2px;
 }
