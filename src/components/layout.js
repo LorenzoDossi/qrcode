@@ -13,7 +13,6 @@ import { StaticQuery, graphql } from "gatsby"
 import layoutStyles from './layout.module.scss'
 
 const Layout = ({ children, data }) => {
-  document.addEventListener("touchstart", function () { }, true);
   return (
     <>
       <StaticQuery
@@ -37,11 +36,11 @@ const Layout = ({ children, data }) => {
           }
         }`}
         render={data => (
-          <Header siteSettings={data.allSanitySiteSettings.edges[0]} />
+          <Header ontouchstart siteSettings={data.allSanitySiteSettings.edges[0]} />
         )}
       />
       <div style={{ zIndex: '-1' }}>
-        <main>{children}</main>
+        <main ontouchstart>{children}</main>
       </div>
     </>
   )
